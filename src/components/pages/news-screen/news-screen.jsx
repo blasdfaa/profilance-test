@@ -16,7 +16,7 @@ const NewsScreen = () => {
         setSearchValue(e.target.value);
     }, []);
 
-    const handleClearSearchValue = React.useCallback((e) => {
+    const handleClearSearchValue = React.useCallback(() => {
         setSearchValue('');
     }, []);
 

@@ -2,13 +2,17 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { requireLogin } from '../../../redux/user-data/user-data.slice';
-
 import TextField from '../text-field/text-field';
+import { UseCloseModal } from '../../../hooks/use-close-modal';
 
-const ESC_KEY_NAME = 'Escape';
 const AccountData = {
     LOGIN: 'login123',
     PASSWORD: 'password123',
+};
+const FormErrorMessage = {
+    LOGIN: 'Введите логин',
+    PASSWORD: 'Введите пароль',
+    FORM: 'Неверный логин или пароль',
 };
 
 const LoginPopup = ({ onClose }) => {
@@ -20,24 +24,15 @@ const LoginPopup = ({ onClose }) => {
         form: '',
     });
 
-    console.log(formError);
-
     const dispatch = useDispatch();
-
     const loginInputRef = React.useRef(null);
+
+    UseCloseModal(onClose, '.login-popup');
 
     React.useEffect(() => {
         if (loginInputRef.current !== null) {
             loginInputRef.current.focus();
         }
-
-        document.body.addEventListener('click', handleCloseOnClickOutside);
-        document.body.addEventListener('keydown', handleCloseOnKeyPress);
-
-        return () => {
-            document.body.removeEventListener('click', handleCloseOnClickOutside);
-            document.body.removeEventListener('keydown', handleCloseOnKeyPress);
-        };
     }, []);
 
     const handleChangeLoginValue = React.useCallback((e) => {
@@ -66,17 +61,17 @@ const LoginPopup = ({ onClose }) => {
 
         if (!loginValue) {
             isValid = false;
-            errors.login = 'Введите логин';
+            errors.login = FormErrorMessage.LOGIN;
         }
 
         if (!passwordValue) {
             isValid = false;
-            errors.password = 'Введите пароль';
+            errors.password = FormErrorMessage.PASSWORD;
         }
 
         if (loginValue && passwordValue && !isDataCorrectly) {
             isValid = false;
-            errors.form = 'Неверный логин или пароль';
+            errors.form = FormErrorMessage.FORM;
         }
 
         setFormError({ ...errors });
@@ -87,18 +82,6 @@ const LoginPopup = ({ onClose }) => {
     const handleClearFields = () => {
         setLoginValue('');
         setPasswordValue('');
-    };
-
-    const handleCloseOnClickOutside = ({ target }) => {
-        if (!target.closest('.login-popup')) {
-            onClose();
-        }
-    };
-
-    const handleCloseOnKeyPress = ({ key }) => {
-        if (key === ESC_KEY_NAME) {
-            onClose();
-        }
     };
 
     return (
