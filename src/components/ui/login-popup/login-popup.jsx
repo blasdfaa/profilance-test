@@ -59,7 +59,7 @@ const LoginPopup = ({ onClose }) => {
     };
 
     const isFormValid = () => {
-        let isValid;
+        let isValid = true;
         const isDataCorrectly =
             AccountData.LOGIN === loginValue && AccountData.PASSWORD === passwordValue;
         const errors = {};
