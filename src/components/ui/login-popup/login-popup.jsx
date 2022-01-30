@@ -118,6 +118,7 @@ const LoginPopup = ({ onClose }) => {
                         Войти
                     </button>
                     {!isFormValid && isFormFilled && <p>Неверный логин или пароль</p>}
+                    {!isFormValid && !isFormFilled && <p>Поля не должны быть пустыми</p>}
                 </div>
             </form>
         </div>

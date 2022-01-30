@@ -2,9 +2,9 @@ import React from 'react';
 
 const TextField = React.forwardRef(({ className, ...props }, ref) => {
     return (
-        <div className={`text-input ${className}`}>
+        <div className={className}>
             <label>
-                <input className="text-field__input" ref={ref} {...props} />
+                <input className="text-input text-field__input" ref={ref} {...props} />
             </label>
         </div>
     );
