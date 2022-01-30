@@ -45,6 +45,9 @@
 }
 
 .navigation__toggle {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
     display: none;
     position: relative;
     border: none;
