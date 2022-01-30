@@ -14,3 +14,7 @@
         box-shadow: var(--text-field-hover-shadow);
     }
 }
+
+.text-input__error-message {
+    color: var(--form-error-color);
+}

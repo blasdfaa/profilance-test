@@ -14,7 +14,13 @@ const AccountData = {
 const LoginPopup = ({ onClose }) => {
     const [loginValue, setLoginValue] = React.useState('');
     const [passwordValue, setPasswordValue] = React.useState('');
-    const [isFormValid, setFormValid] = React.useState(true);
+    const [formError, setFormError] = React.useState({
+        login: '',
+        password: '',
+        form: '',
+    });
+
+    console.log(formError);
 
     const dispatch = useDispatch();
 
@@ -45,15 +51,37 @@ const LoginPopup = ({ onClose }) => {
     const handleSubmitLogin = (e) => {
         e.preventDefault();
 
-        if (AccountData.LOGIN !== loginValue && AccountData.PASSWORD !== passwordValue) {
-            setFormValid(false);
-            return;
+        if (isFormValid()) {
+            dispatch(requireLogin(loginValue));
+            handleClearFields();
+            onClose();
+        }
+    };
+
+    const isFormValid = () => {
+        let isValid;
+        const isDataCorrectly =
+            AccountData.LOGIN === loginValue && AccountData.PASSWORD === passwordValue;
+        const errors = {};
+
+        if (!loginValue) {
+            isValid = false;
+            errors.login = 'Введите логин';
         }
 
-        dispatch(requireLogin(loginValue));
-        setFormValid(true);
-        handleClearFields();
-        onClose();
+        if (!passwordValue) {
+            isValid = false;
+            errors.password = 'Введите пароль';
+        }
+
+        if (loginValue && passwordValue && !isDataCorrectly) {
+            isValid = false;
+            errors.form = 'Неверный логин или пароль';
+        }
+
+        setFormError({ ...errors });
+
+        return isValid;
     };
 
     const handleClearFields = () => {
@@ -72,8 +100,6 @@ const LoginPopup = ({ onClose }) => {
             onClose();
         }
     };
-
-    const isFormFilled = loginValue && passwordValue;
 
     return (
         <div className="login-popup login-popup--opened">
@@ -98,6 +124,7 @@ const LoginPopup = ({ onClose }) => {
                     type="text"
                     name="login"
                     placeholder="Логин"
+                    error={formError.login}
                     value={loginValue}
                     onChange={handleChangeLoginValue}
                 />
@@ -107,6 +134,7 @@ const LoginPopup = ({ onClose }) => {
                     type="text"
                     name="password"
                     placeholder="Пароль"
+                    error={formError.password}
                     value={passwordValue}
                     onChange={handleChangePasswordValue}
                 />
@@ -117,8 +145,9 @@ const LoginPopup = ({ onClose }) => {
                     >
                         Войти
                     </button>
-                    {!isFormValid && isFormFilled && <p>Неверный логин или пароль</p>}
-                    {!isFormValid && !isFormFilled && <p>Поля не должны быть пустыми</p>}
+                    {formError.form && (
+                        <p className="login-popup__error-message">{formError.form}</p>
+                    )}
                 </div>
             </form>
         </div>

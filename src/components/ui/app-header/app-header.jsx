@@ -38,12 +38,10 @@ const AppHeader = () => {
                             isMobileMenuOpen ? 'navigation__toggle--active' : ''
                         }`}
                         type="button"
+                        aria-label="Показать/Скрыть Меню (Скрыто по умолчанию)"
                         onClick={handleMobileMenuToggle}
                     >
                         <span className="navigation__toggle-line" />
-                        <span className="visually-hidden">
-                            Показать/Скрыть Меню (Скрыто по умолчанию)
-                        </span>
                     </button>
                     <div className="navigation__wrapper">
                         <div className="navigation__wrapper-head">
