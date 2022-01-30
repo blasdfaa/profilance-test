@@ -1,0 +1,40 @@
+:root {
+    // fonts
+    --poppins-font: 'Poppins', 'Arial', sans-serif;
+
+    // Colors
+    --white: #ffffff;
+    --gray: #d4d4d4;
+    --black: #111111;
+    --royal-blue: #6e41e2;
+    --royal-blue-dark: #5835b0;
+    --royal-blue-darker: #472c8a;
+    --big-stone: #182f43;
+
+    // shadows
+    --popup-shadow: 0px 4px 4px rgba(51, 51, 51, 0.04), 0px 4px 16px rgba(51, 51, 51, 0.08);
+    --text-field-shadow: 0px 4px 4px rgba(51, 51, 51, 0.04), 0px 4px 16px rgba(51, 51, 51, 0.08);
+    --text-field-hover-shadow: 0px 4px 4px rgba(51, 51, 51, 0.04),
+        0px 4px 24px rgba(51, 51, 51, 0.24);
+
+    // elements
+    --news-text-color: var(--big-stone);
+    --header-bottom-line-color: rgba(17, 17, 17, 0.1);
+    --btn-outline-hover-color: rgba(110, 65, 226, 0.04);
+    --btn-outline-active-color: rgba(110, 65, 226, 0.16);
+    --btn-focus-color: rgba(17, 17, 17, 0.48);
+    --link-color: var(--black);
+    --link-active-line-color: var(--royal-blue);
+    --btn-primary-color: var(--royal-blue);
+    --burger-color: var(--royal-blue);
+
+    // sizes
+    --container-max-width: 1270px;
+    --container-min-width: 320px;
+    --container-padding: 15px;
+    --button-horizontal-padding: 18px;
+    --button-vertical-padding: 18px;
+    --burger-width: 30px;
+    --burger-height: 30px;
+    --burger-line-height: 3px;
+}

@@ -1,0 +1,27 @@
+.search-field {
+    position: relative;
+}
+
+.search-field__input {
+    height: 56px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNS4yMDYgMTYuNjE3bDMuMDkgMy4wODZhLjk4NS45ODUgMCAwMDEuNDEgMCAxLjAxNiAxLjAxNiAwIDAwMC0xLjQzbC0zLjA4LTMuMDhhNy4wMDcgNy4wMDcgMCAxMC01LjYxOSAyLjgyMWMxLjU3NSAwIDMuMDI5LS41MiA0LjE5OS0xLjM5N3ptLTQuMi0uNjA1YTUuMDA0IDUuMDA0IDAgMTEuMDAxLTEwLjAxIDUuMDA0IDUuMDA0IDAgMDE1LjAwNCA1LjAwNSA1LjAwNCA1LjAwNCAwIDAxLTUuMDAzIDUuMDA1aC0uMDAyeiIgZmlsbD0iIzExMSIgZmlsbC1vcGFjaXR5PSIuNDgiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-position: 16px 50%;
+    padding: 16px 44px;
+
+    &:focus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNS4yMDYgMTYuNjE3bDMuMDkgMy4wODZhLjk4NS45ODUgMCAwMDEuNDEgMCAxLjAxNiAxLjAxNiAwIDAwMC0xLjQzbC0zLjA4LTMuMDhhNy4wMDcgNy4wMDcgMCAxMC01LjYxOSAyLjgyMWMxLjU3NSAwIDMuMDI5LS41MiA0LjE5OS0xLjM5N3ptLTQuMi0uNjA1YTUuMDA0IDUuMDA0IDAgMTEuMDAxLTEwLjAxIDUuMDA0IDUuMDA0IDAgMDE1LjAwNCA1LjAwNSA1LjAwNCA1LjAwNCAwIDAxLTUuMDAzIDUuMDA1aC0uMDAyeiIgZmlsbD0iIzExMSIvPjwvc3ZnPg==);
+    }
+}
+
+.search-field__clear-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    width: 44px;
+    height: 56px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02LjMzNSAxNi4wNDZhMS4xNDQgMS4xNDQgMCAxMDEuNjE4IDEuNjE5TDEyIDEzLjYxOGw0LjA0NiA0LjA0N2ExLjE0NSAxLjE0NSAwIDAwMS42MTktMS42MTlMMTMuNjE4IDEybDQuMDQ2LTQuMDQ2YTEuMTQ1IDEuMTQ1IDAgMDAtMS42MTgtMS42MTlMMTIgMTAuMzgxIDcuOTU0IDYuMzM1YTEuMTQ0IDEuMTQ0IDAgMDAtMS42MTkgMS42MTlMMTAuMzgxIDEybC00LjA0NiA0LjA0NnoiIGZpbGw9IiMxMTEiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}

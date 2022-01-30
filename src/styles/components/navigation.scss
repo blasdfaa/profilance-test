@@ -1,0 +1,157 @@
+.navigation__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.navigation__list {
+    padding: 0;
+    margin: 0 40px 0 0;
+    list-style: none;
+}
+
+.navigation__item {
+    display: flex;
+    align-items: center;
+    height: 76px;
+    position: relative;
+}
+
+.navigation__link {
+    opacity: 0.5;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+    }
+}
+
+.navigation__link--active {
+    opacity: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 3px;
+        background-color: var(--link-active-line-color);
+    }
+}
+
+.navigation__wrapper-head {
+    display: none;
+    padding: 24px 40px 0 0;
+}
+
+.navigation__toggle {
+    display: none;
+    position: relative;
+    border: none;
+    padding: 0;
+    width: var(--burger-width);
+    height: var(--burger-height);
+    color: var(--burger-color);
+    background-color: transparent;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: var(--burger-line-height);
+        background-color: currentColor;
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    &::after {
+        top: calc(100% - var(--burger-line-height));
+    }
+}
+
+.navigation__toggle-line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: var(--burger-line-height);
+    background-color: currentColor;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navigation__toggle--active {
+    &::before {
+        top: 50%;
+        transform: rotate(45deg);
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::after {
+        top: 50%;
+        transform: rotate(-45deg);
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+}
+.navigation__toggle--active .navigation__toggle-line {
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 539px) {
+    .navigation__wrapper {
+        display: none;
+        padding: 0 15px 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: var(--white);
+        z-index: 1;
+    }
+
+    .navigation--opened .navigation__wrapper,
+    .navigation--opened .navigation__wrapper-head {
+        display: block;
+    }
+
+    .navigation--opened .navigation__toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+    }
+
+    .navigation__toggle {
+        display: block;
+    }
+
+    .navigation__list {
+        padding-top: 20px;
+        margin: 0 auto 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation__item {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navigation__link--active {
+        &::before {
+            height: 50%;
+            top: 50%;
+            width: 3px;
+            right: auto;
+            transform: translateY(-50%);
+        }
+    }
+}

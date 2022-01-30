@@ -1,0 +1,52 @@
+.login-popup {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    display: none;
+    padding: 29px 25px;
+    width: 481px;
+    min-height: 322px;
+    background-color: var(--white);
+    box-shadow: var(--popup-shadow);
+    border-radius: 8px;
+}
+
+.login-popup--opened {
+    display: block;
+}
+
+.login-popup__close-btn {
+    --button-horizontal-padding: 0;
+    --button-vertical-padding: 0;
+
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.login-popup__title {
+    margin: 0;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.login-popup__form {
+    padding-top: 24px;
+}
+
+.login-popup__field-item {
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.login-popup__submit-btn {
+    margin-top: 14px;
+}

@@ -1,0 +1,16 @@
+.text-input {
+    width: 100%;
+    font: inherit;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: var(--text-field-shadow);
+    border: none;
+    transition: box-shadow 0.1s linear;
+
+    &:hover,
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: var(--text-field-hover-shadow);
+    }
+}

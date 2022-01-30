@@ -1,0 +1,26 @@
+.user-menu {
+    position: relative;
+}
+
+.user-menu__profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-menu__profile-avatar {
+    display: block;
+    margin-left: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.user-menu__logout-btn {
+    color: var(--royal-blue);
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: var(--royal-blue-dark);
+    }
+}
